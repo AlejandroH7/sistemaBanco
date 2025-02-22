@@ -35,3 +35,32 @@ class Banco:
                 print("Clientes en espera:")
                 print("Prioritarios:", list(self.cola_prioritaria))
                 print("Normales:", list(self.cola_normal))
+
+#Parte final de Alejandro y Erik
+
+def menu():
+    banco = Banco()
+    while True:
+        # Muestra el menú de opciones
+        print("\n1. Agregar cliente")
+        print("2. Atender cliente")
+        print("3. Mostrar cola de espera")
+        print("4. Salir")
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            nombre = input("Ingrese el nombre del cliente: ")
+            es_prioritario = input("¿Es cliente prioritario? (s/n): ").lower() == 's'
+            banco.agregar_cliente(nombre, es_prioritario)
+        elif opcion == "2":
+            banco.atender_cliente()
+        elif opcion == "3":
+            banco.mostrar_cola()
+        elif opcion == "4":
+            print("Saliendo del programa.")
+            break
+        else:
+            print("Opción no válida, intente nuevamente.")
+
+if __name__ == "__main__":
+    menu()
