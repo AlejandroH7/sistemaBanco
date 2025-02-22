@@ -1,3 +1,4 @@
+#Parte de Alejandro
 from collections import deque
 
 class Banco:
@@ -24,3 +25,13 @@ class Banco:
             print(f"Atendiendo a cliente: {cliente}")
         else:
             print("No hay clientes en espera.")
+            
+#Parte de Erik
+    def mostrar_cola(self):
+            # Muestra la lista de clientes en espera
+            if not self.cola_prioritaria and not self.cola_normal:
+                print("No hay clientes en la cola.")
+            else:
+                print("Clientes en espera:")
+                print("Prioritarios:", list(self.cola_prioritaria))
+                print("Normales:", list(self.cola_normal))
